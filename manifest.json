@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "MCTiers Lookup",
+  "version": "1.0.0",
+  "description": "Instant Minecraft player tier lookup powered by MCTiers API v2",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "MCTiers Lookup"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mctiers.com/*",
+    "https://crafatar.com/*",
+    "https://mc-heads.net/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://crafatar.com https://mc-heads.net data:; connect-src https://mctiers.com"
+  }
+}
